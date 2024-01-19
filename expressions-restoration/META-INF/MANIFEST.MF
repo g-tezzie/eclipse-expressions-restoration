@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Expressions-restoration
 Bundle-SymbolicName: expressions-restoration;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.eclipse.ui
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.debug.core;bundle-version="3.17.0"
 Automatic-Module-Name: expressions.restoration
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
