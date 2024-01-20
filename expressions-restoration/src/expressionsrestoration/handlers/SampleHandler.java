@@ -23,6 +23,7 @@ import org.eclipse.debug.core.model.IExpression;
 import org.eclipse.debug.core.model.IWatchExpression;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.dialogs.TypeFilteringDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public class SampleHandler extends AbstractHandler {
@@ -30,9 +31,12 @@ public class SampleHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
+		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+
+		TypeFilteringDialog dialog = new TypeFilteringDialog(window.getShell(), List.of(""));
 //		ResourceSelectionDialog dialog = new ResourceSelectionDialog(getShell(), rootResource, msg);
 //		dialog.setInitialSelections(selectedResources);
-//		dialog.open();
+		dialog.open();
 //		return dialog.getResult();
 
 		IExpressionManager expressionManager = DebugPlugin.getDefault().getExpressionManager();
@@ -67,7 +71,6 @@ public class SampleHandler extends AbstractHandler {
 			e.printStackTrace();
 		}
 
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		MessageDialog.openInformation(window.getShell(), "Expressions-restoration", "Hello, Eclipse world");
 		return null;
 	}
