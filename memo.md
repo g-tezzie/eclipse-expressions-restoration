@@ -46,3 +46,11 @@ IWatchExpression newWatchExpression = expressionManager.newWatchExpression("piyo
 expressionManager.addExpression(newWatchExpression);
 ...
 ```
+
+## ファイルダイアログ
+
+org.eclipse.jface.dialogs.Dialog がいっぱいあって迷う
+
+https://www.ne.jp/asahi/hishidama/home/tech/eclipse/plugin/develop/dialog.html#h_FileDialog
+
+http://www.eclipse-tips.com/how-to-guides/5-selection-dialogs-in-eclipse
