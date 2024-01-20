@@ -54,3 +54,51 @@ org.eclipse.jface.dialogs.Dialog がいっぱいあって迷う
 https://www.ne.jp/asahi/hishidama/home/tech/eclipse/plugin/develop/dialog.html#h_FileDialog
 
 http://www.eclipse-tips.com/how-to-guides/5-selection-dialogs-in-eclipse
+
+SaveAsDialog がない
+
+```
+AbstractElementListSelection Dialog - org.eclipse.ui.dialogs
+Checked TreeSelection Dialog - org.eclipse.ui.dialogs
+ContainerCheckedTreeViewer - org.eclipse.ui.dialogs
+EditorSelection Dialog - org.eclipse.ui.dialogs
+ElementListSelectionDialog - org.eclipse.ui.dialogs
+ElementTreeSelection Dialog - org.eclipse.ui.dialogs
+FileEditor MappingContentProvider - org.eclipse.ui.dialogs
+FileEditorMappingLabelProvider - org.eclipse.ui.dialogs
+FileSystemElement - org.eclipse.ui.dialogs
+FilteredItems SelectionDialog - org.eclipse.ui.dialogs
+FilteredList-org.eclipse.ui.dialogs
+Filtered Tree-org.eclipse.ui.dialogs
+IOverwriteQuery-org.eclipse.ui.dialogs
+ISelectionStatusValidator-org.eclipse.ui.dialogs
+ISelectionValidator- org.eclipse.ui.dialogs
+IStyledStringHighlighter - org.eclipse.ui.dialogs
+WorkingSetEditWizard - org.eclipse.ui.dialogs
+Working SetNew Wizard - org.eclipse.ui.dialogs
+IWorkingSetPage- org.eclipse.ui.dialogs
+IWorkingSetSelection Dialog - org.eclipse.ui.dialogs
+ListDialog-org.eclipse.ui.dialogs
+ListSelection Dialog - org.eclipse.ui.dialogs
+PatternFilter-org.eclipse.ui.dialogs
+PreferenceLinkArea - org.eclipse.ui.dialogs
+PreferencesUtil-org.eclipse.ui.dialogs
+Property DialogAction - org.eclipse.ui.dialogs
+Property Page - org.eclipse.ui.dialogs Search Pattern - org.eclipse.ui.dialogs
+Selection Dialog- org.eclipse.ui.dialogs
+Selection Status Dialog - org.eclipse.ui.dialogs
+StyledStringHighlighter-org.eclipse.ui.dialogs
+TwoPaneElementSelector - org.eclipse.ui.dialogs
+TypeFiltering Dialog - org.eclipse.ui.dialogs
+WorkingSetConfigurationBlock-org.eclipse.ui.dialogs
+WorkingSetGroup - org.eclipse.ui.dialogs
+YesNoCancelListSelectionDialog - org.eclipse.ui.dialogs
+```
+
+swt の FileDialog つかおう
+
+## パッケージング
+
+https://help.eclipse.org/2022-09/advanced/print.jsp?topic=/org.eclipse.platform.doc.isv/guide/product.htm&cp=2_0_21
+
+https://atmarkit.itmedia.co.jp/ait/articles/0604/20/news141.html
