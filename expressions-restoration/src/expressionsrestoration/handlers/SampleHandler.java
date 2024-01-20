@@ -22,8 +22,10 @@ import org.eclipse.debug.core.IExpressionManager;
 import org.eclipse.debug.core.model.IExpression;
 import org.eclipse.debug.core.model.IWatchExpression;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.dialogs.TypeFilteringDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public class SampleHandler extends AbstractHandler {
@@ -33,17 +35,26 @@ public class SampleHandler extends AbstractHandler {
 
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
-		TypeFilteringDialog dialog = new TypeFilteringDialog(window.getShell(), List.of(""));
-//		ResourceSelectionDialog dialog = new ResourceSelectionDialog(getShell(), rootResource, msg);
-//		dialog.setInitialSelections(selectedResources);
-		dialog.open();
-//		return dialog.getResult();
+		{
+			Shell shell = window.getShell();
+			FileDialog dialog = new FileDialog(shell, SWT.SAVE);
+			String platform = SWT.getPlatform();
+			String[] filterNames = new String[] { "Java Binary Object (*.jbo)", "All Files (*)" };
+			String[] filterExtensions = new String[] { "*.jbo", "*" };
+			String filterPath = platform.equals("win32") ? "c:\\" : "/";
+			dialog.setFilterNames(filterNames);
+			dialog.setFilterExtensions(filterExtensions);
+			dialog.setFilterPath(filterPath);
+			dialog.setFileName("expressions");
+			String open = dialog.open();
+			if (open != null)
+				System.out.println("Save to: " + open);
+		}
 
 		IExpressionManager expressionManager = DebugPlugin.getDefault().getExpressionManager();
 		IWatchExpression newWatchExpression = expressionManager.newWatchExpression("piyo");
 		expressionManager.addExpression(newWatchExpression);
 
-		@SuppressWarnings("unused")
 		IExpression[] expressions = expressionManager.getExpressions();
 
 		Stream<String> map = Arrays.stream(expressions).map(r -> r.getExpressionText());
