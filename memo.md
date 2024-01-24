@@ -102,3 +102,7 @@ swt の FileDialog つかおう
 https://help.eclipse.org/2022-09/advanced/print.jsp?topic=/org.eclipse.platform.doc.isv/guide/product.htm&cp=2_0_21
 
 https://atmarkit.itmedia.co.jp/ait/articles/0604/20/news141.html
+
+`Install new software...` を使えるのは， `Feature project` 
+
+https://www.ne.jp/asahi/hishidama/home/tech/eclipse/plugin/develop/feature.html
